@@ -2,17 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
+        stage('Build Docker Image') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/humaira0316/jenkins-ansible-poc.git'
+                sh 'docker build -t html-poc:latest .'
             }
         }
-
-       stage('Build Docker Image') {
-    steps {
-        sh 'docker build -t html-poc:latest .'
-    }
-}
     }
 }
