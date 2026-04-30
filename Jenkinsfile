@@ -9,10 +9,10 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t poc-nginx:latest .'
-            }
-        }
+       stage('Build Docker Image') {
+    steps {
+        sh 'docker build -t html-poc:latest .'
+    }
+}
     }
 }
