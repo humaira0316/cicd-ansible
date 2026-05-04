@@ -1,17 +1,7 @@
 pipeline {
     agent any
 
-    options {
-        skipDefaultCheckout()
-    }
-
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t html-cicd-poc:latest .'
