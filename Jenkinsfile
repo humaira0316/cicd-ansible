@@ -1,14 +1,12 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Cleanup') {
-            steps {
-                deleteDir()
-            }
-        }
+    options {
+        skipDefaultCheckout()
+    }
 
-        stage('Checkout Code') {
+    stages {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
